@@ -8,6 +8,7 @@ use marvinosswald\Instagram\Endpoints\Media;
 use marvinosswald\Instagram\Endpoints\Relationships;
 use marvinosswald\Instagram\Endpoints\Tag;
 use marvinosswald\Instagram\Endpoints\User;
+use StdClass;
 
 class Instagram {
     /**
@@ -80,7 +81,16 @@ class Instagram {
             'access_token' => $this->accessToken
         ],$params)]);
 
-        return \GuzzleHttp\json_decode((string) $client->getBody());
+        
+        $return = \GuzzleHttp\json_decode((string) $client->getBody());
+
+        if ($return instanceof StdClass) {
+            $return->ratelimit = new StdClass;
+            $return->ratelimit->limit = $client->getHeader('x-ratelimit-limit')[0] ?? null;
+            $return->ratelimit->remaining = $client->getHeader('x-ratelimit-remaining')[0] ?? null;
+        }
+
+        return $return;
     }
 
     /**
