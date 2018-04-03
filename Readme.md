@@ -19,12 +19,7 @@
     $ git clone https://github.com/Headoo/instagram-php.git
     $ cd instagram-php
     $ composer install
+    $ export INSTAGRAM_ACCESS_TOKEN=<your.access.token>
+    $ export INSTAGRAM_USERNAME=<put your user related to the access token. You can get one here https://api.instagram.com/v1/users/self?access_token=<your.access.token>>
     $ ./vendor/phpunit/phpunit/phpunit
     
-## Laravel
-Starting from Laravel 5.5 you can easily install this package with composer and Package Discovery will pick it up. 
-
-
-## [Documentation](http://instagram-php-sdk.readthedocs.io/en/latest/)
-I'm like the worst writer ever... So please feel free to improve it !
-
