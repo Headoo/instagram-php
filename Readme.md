@@ -19,7 +19,7 @@
     $ git clone https://github.com/Headoo/instagram-php.git
     $ cd instagram-php
     $ composer install
-    $ export INSTAGRAM_ACCESS_TOKEN=<your.access.token>
-    $ export INSTAGRAM_USERNAME=<put your user related to the access token. You can get one here https://api.instagram.com/v1/users/self?access_token=<your.access.token>>
+    $ export INSTAGRAM_ACCESS_TOKEN=your.access.token
+    $ export INSTAGRAM_USERNAME=your.username #You can get one here https://api.instagram.com/v1/users/self?access_token=your.access.token
     $ ./vendor/phpunit/phpunit/phpunit
     
